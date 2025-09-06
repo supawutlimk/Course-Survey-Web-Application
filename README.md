@@ -29,3 +29,15 @@ The project demonstrates skills in:
 - Course list with links.
 
 - Summary of survey results per course (statistics + visualizations).
+
+## Database Design
+
+Entities: Student, Course, Question, Answer, Survey Response, Take_Course.
+
+Constraints:
+
+- Each student has one unique email.
+
+- A student can take multiple surveys, but only once per course.
+
+- Course ID uniquely identifies course code and title.
