@@ -43,3 +43,15 @@ Constraints:
 - Course ID uniquely identifies course code and title.
 
 ![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/75134ddaa5b08c40ed6b264ea3f44b601051eb2a/ER_Diagram.png)
+
+![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/e298bbccd49b1dfc135a54696f9bc4ae7dd0bd43/Relational_Schema.png)
+
+## Tech Stack
+
+Backend: Python (Flask)
+
+Database: SQLite
+
+Frontend: HTML, Bootstrap, Chart.js
+
+Tools: VS Code, DB Browser for SQLite
