@@ -44,7 +44,7 @@ Constraints:
 
 ![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/1180398df3c243fa4979cbdfa3e0d6abfeb97feb/images/ER_Diagram.png)
 
-![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/e298bbccd49b1dfc135a54696f9bc4ae7dd0bd43/Relational_Schema.png)
+![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/f8a1a88b020e035056596f4b634445165db16df7/images/Relational_Schema.png)
 
 ## Tech Stack
 
