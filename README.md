@@ -1,6 +1,6 @@
 # Course Survey Web Application
 
-Overview
+## Overview
 
 This project was developed as part of the EBA3420 Databases course at BI Norwegian Business School (Spring 2023). The goal was to design and implement a web application for course evaluations that allows students to take surveys and view summarized results.
 
@@ -13,3 +13,19 @@ The project demonstrates skills in:
 - Web development with Flask
 
 - Data collection and visualization
+
+## Features
+
+- Homepage with welcome message and navigation.
+
+- Take a Survey:
+  - Email input (non-anonymous survey).
+  - Course selection from dropdown.
+  - Four evaluation questions with Likert-scale answers.
+  - Duplicate submission prevention.
+
+- View Survey Results:
+
+- Course list with links.
+
+- Summary of survey results per course (statistics + visualizations).
