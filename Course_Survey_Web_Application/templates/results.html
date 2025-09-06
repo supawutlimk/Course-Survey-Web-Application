@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Results{% endblock %}
+{% block main %}
+
+<table class="table table-striped table-sm ">
+    <thead>
+      <tr>
+        <th class="text-center">Course Code</th>
+        <th class="text-center">Survey ID</th>
+        <th class="text-center">Course Title</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for course in courses %}
+          <tr>
+            <td class="text-center">{{ course.course_code }}</td>
+            <td class="text-center">{{ course.course_id }}</td>
+            <td class="text-center"><a href="{{ url_for('view_results', course_code = course.course_code, course_id = course.course_id)}}">{{ course.course_title }}</a></td>
+          </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+

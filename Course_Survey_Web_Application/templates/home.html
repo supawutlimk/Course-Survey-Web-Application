@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div> <h1 class="welcome_text"> Welcome to The <span class="DataScience">DataScience<span class="text-primary">@BI</span></span> Course Evaluation 2023!
+</h1></div>
+<hr>
+<div>
+<p class="welcome_message">This website provide the surveys for the students who have taken the DataScience courses at BI. .<br>
+Your input will help us improve our courses. Thank you!</p>
+</div>
+
+    <!--<div class="container my-5">-->
+        <div class="container my-5">
+            <div class="d-flex justify-content-center">
+                <a href="{{ url_for('survey')}}" class="btn btn-primary btn-lg mx-2">Take a Survey</a>
+                <a href="{{ url_for('results')}}" class="btn btn-secondary btn-lg mx-2">View the Survey Results</a>
+            </div>
+        </div>
+    <!--</div>-->
+
+{% endblock %}

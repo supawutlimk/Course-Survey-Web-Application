@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Take a Survey{% endblock %}
+{% block main %}
+<h2 class="mt-4">Please fill out your email and choose the course.</h2>
+
+<form class="card p-2" action="{{ url_for('survey') }}" method="post">
+    <div>
+    <label class="form-label" for="email">Your Email</label>
+    <input name="email" type="email" class="form-control" id="email" value="{{ email }}" required />
+    </div>
+
+    <div class="form-floating my-2">
+        <select id="form-course" class="form-select" name="course_id" required>
+          <option value="">Select one from the list</option>
+          {% for title in titles %}
+          <option value="{{ title.course_id }}">{{title.course_code}} ({{title.course_id}}) - {{ title.title }}</option>
+          {% endfor %}
+        </select>
+        <label for="form-category">Course</label>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Next</button>
+    </div>
+</form>
+
+{% endblock %}

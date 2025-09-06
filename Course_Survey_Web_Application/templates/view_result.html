@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% block title %}Result of {{course_code}} Survey{% endblock %}
+    {% block main %}
+
+
+<h1><span class="text-primary">{{course_code}}</span> : {{course_title}}</h1>
+<br>
+<div class="row">
+<div class="col-xl-4 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <p class="text-center text-primary text-uppercase mb-1">
+                        <b>There are</b></p>
+                    <p class="text-center mb-0 fs-1 ">{{number_student}}</p>
+                    <p class="text-center text-primary text-uppercase text-muted mb-1"><small>
+                        students who took this survey.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-4 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    {% if avg_per_survey is not none and avg_per_survey.percent_avg_total_score is not none %}
+                    <p class="text-center text-primary text-uppercase mb-1">
+                        <small><b>The average points per each survey is</b></small>
+                    </p>
+                    <p class="text-center mb-0 fs-1">{{"{:,.2f}".format(avg_per_survey.percent_avg_total_score)}}%</p>
+                    <p class="text-center text-primary text-uppercase text-muted mb-1">
+                        <small>of full points ({{"{:,.2f}".format(avg_per_survey.avg_score)}} / 20)</small>
+                    </p>
+                    {% else %}
+                    <p class="text-center text-primary text-uppercase mb-1">
+                        <small><b>No one takes this survey yet.</b></small>
+                    </p>
+                    <p class="text-center text-primary text-uppercase text-muted mb-1">
+                        <small>Please check later.</small>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-4 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    {% if view_result is not none and view_result.avg_score_per_answer is not none %}
+                    <p class="text-center text-primary text-uppercase mb-1">
+                        <small><b>The average points per each answer is</b></small>
+                    </p>
+                    <p class="text-center mb-0 fs-1">{{"{:,.2f}".format(view_result.avg_score_per_answer)}}</p>
+                    <p class="text-center text-primary text-uppercase text-muted mb-1">
+                        <small>out of 5</small>
+                    </p>
+                    {% else %}
+                    <p class="text-center text-primary text-uppercase mb-1">
+                        <small><b>No one takes this survey yet.</b></small>
+                    </p>
+                    <p class="text-center text-primary text-uppercase text-muted mb-1">
+                        <small>Please check later.</small>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 text-center font-weight-bold text-primary">AERAGE POINTS OF EACH QUESTION</h6>
+    </div>
+    <div class="card-body">
+
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <script>
+            const ctx = document.getElementById('myChart');
+          
+            const data = {
+              labels: {{ labels_text | safe }},
+              datasets: [{
+                label: 'Average of Each Question',
+                data: {{ values | safe }},
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+              }]
+            };
+          
+            const config = {
+              type: 'radar',
+              data: data,
+              options: {
+                elements: {
+                  line: {
+                    borderWidth: 3
+                  }
+                },
+                scales: {
+                  r: {
+                    beginAtZero: true,
+                    suggestedMax: 5
+                  }
+                }
+              },
+            };
+          
+            new Chart(ctx, config);
+          </script>
+          
+
+
+</div>
+</div>
+<!----
+<p>There are <b>{{number_student}}</b> students who took this survey.</p> 
+<p>This survey gets {{view_result.percent_total}}% of the total points</p>
+
+{% if view_result is not none and view_result.avg_score_per_answer is not none %}
+<p> The average points per each answer is {{"{:,.2f}".format(view_result.avg_score_per_answer)}}</p>
+{% else %}
+<p> No results found.</p>
+{% endif %}
+
+{% if avg_per_survey is not none and avg_per_survey.percent_avg_total_score is not none %}
+<p> The average score per each survey is {{"{:,.2f}".format(avg_per_survey.percent_avg_total_score)}}% of full points</p>
+{% else %}
+<p>No one takes this survey yet</p>
+{% endif %}
+--->
+
+    {% endblock %}
+
+
+
