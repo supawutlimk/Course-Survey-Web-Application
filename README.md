@@ -68,15 +68,15 @@ Frontend: HTML, Bootstrap, Chart.js
 
 Tools: VS Code, DB Browser for SQLite
 
-## Example
-![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/f5572708e82c1b39e9f76851b473aecbbb80aaf7/images/Interface.png)
-
 ## Example Survey Questions
 
 1. I have got a clear idea of what is expected of me in this course.
 2. The lecturer(s) presented the course contents well.
 3. The course literature supported my learning.
 4. I have acquired new and relevant knowledge.
+
+## Example
+![imagealt](https://github.com/supawutlimk/Course-Survey-Web-Application/blob/f5572708e82c1b39e9f76851b473aecbbb80aaf7/images/Interface.png)
    
 ## Learning Outcomes
 - Applied database normalization (3NF) in schema design.
